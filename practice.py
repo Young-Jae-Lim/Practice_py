@@ -85,3 +85,4 @@ else:
             print(i, end=' ')
 
 # end for문 안에서 한줄 출력해줌.
+#백준 문제 풀이
