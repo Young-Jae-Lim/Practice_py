@@ -28,15 +28,15 @@
 # print(save_big)
 # print(save.index(save_big)+1)
 
-A = int(input())
-B = int(input())
-C = int(input())
-save = A * B * C
-save_arr = []
-for i in str(save):
-    save_arr.append(i)
-for z in range(10):
-    print(save_arr.count(str(z)))
+# A = int(input())
+# B = int(input())
+# C = int(input())
+# save = A * B * C
+# save_arr = []
+# for i in str(save):
+#     save_arr.append(i)
+# for z in range(10):
+#     print(save_arr.count(str(z)))
 # save_count = []
 # zero = one = two = three = four = five = six = seven = eight = nine = 0
 # save_arr = list(map(int, save_arr))
@@ -76,3 +76,20 @@ for z in range(10):
 
 #너무 노가다 한거같음, 수정해야할듯.. 정수형 노가다(swith case문 생각해서 함)
 #중간부분 수정함 한결 간결해짐.       
+
+import sys
+A_save = []
+B_save = []
+for i in range(10):
+    A = int(input())
+    A_save.append(A)
+for j in A_save:
+    B_save.append(j % 42)
+B_save.sort()
+count = 1
+for z in range(9):
+    if B_save[z] != B_save[z+1]:
+        count+=1
+print(count)
+
+#리스트 범위 생각 잘하자 전체 탐색할 경우 try except도 사용 가능
