@@ -77,19 +77,34 @@
 #너무 노가다 한거같음, 수정해야할듯.. 정수형 노가다(swith case문 생각해서 함)
 #중간부분 수정함 한결 간결해짐.       
 
-import sys
-A_save = []
-B_save = []
-for i in range(10):
-    A = int(input())
-    A_save.append(A)
-for j in A_save:
-    B_save.append(j % 42)
-B_save.sort()
-count = 1
-for z in range(9):
-    if B_save[z] != B_save[z+1]:
-        count+=1
-print(count)
+# import sys
+# A_save = []
+# B_save = []
+# for i in range(10):
+#     A = int(input())
+#     A_save.append(A)
+# for j in A_save:
+#     B_save.append(j % 42)
+# B_save.sort()
+# count = 1
+# for z in range(9):
+#     if B_save[z] != B_save[z+1]:
+#         count+=1
+# print(count)
 
 #리스트 범위 생각 잘하자 전체 탐색할 경우 try except도 사용 가능
+
+import sys
+A = int(input())
+B = list(map(int, sys.stdin.readline().split()))
+save = []
+if len(B) > A:
+    None
+else:
+    big = B[0]
+    for i in B:
+        if i > big:
+            big = i
+    for j in range(A):
+            save.append(((B[j] / big) * 100))
+    print(sum(save)/A)
