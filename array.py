@@ -109,19 +109,37 @@
 #             save.append(((B[j] / big) * 100))
 #     print(sum(save)/A)
 
+# import sys
+# A = int(input())
+# save = []
+# count = 0
+# for i in range(A):
+#     B = list(map(str, sys.stdin.readline()))
+#     for j in B:
+#         if j == 'O':
+#             count +=1
+#             save.append(count)
+#         else:
+#             count = 0
+#             save.append(count)
+#     print(sum(save))
+#     save.clear()
+
 import sys
 A = int(input())
-save = []
 count = 0
+save = []
 for i in range(A):
-    B = list(map(str, sys.stdin.readline()))
-    for j in B:
-        if j == 'O':
-            count +=1
-            save.append(count)
-        else:
-            count = 0
-            save.append(count)
-    print(sum(save))
-    save.clear()
-
+    B = list(map(int, sys.stdin.readline().split()))
+    people_num = B[0]
+    if (len(B) - 1) > people_num:
+        None
+    else:
+        average = sum(B[1:])/people_num
+        for j in B[1:]:
+            if j > average:
+                count += 1
+        save.append((count/people_num) * 100)
+        count = 0
+for z in save:
+    print("{:.3f}%".format(z))
