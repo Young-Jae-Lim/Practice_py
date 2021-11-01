@@ -143,3 +143,5 @@ for i in range(A):
         count = 0
 for z in save:
     print("{:.3f}%".format(z))
+
+#참고:https://ming-jee.tistory.com/124
