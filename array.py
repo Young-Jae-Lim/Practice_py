@@ -94,17 +94,34 @@
 
 #리스트 범위 생각 잘하자 전체 탐색할 경우 try except도 사용 가능
 
+# import sys
+# A = int(input())
+# B = list(map(int, sys.stdin.readline().split()))
+# save = []
+# if len(B) > A:
+#     None
+# else:
+#     big = B[0]
+#     for i in B:
+#         if i > big:
+#             big = i
+#     for j in range(A):
+#             save.append(((B[j] / big) * 100))
+#     print(sum(save)/A)
+
 import sys
 A = int(input())
-B = list(map(int, sys.stdin.readline().split()))
 save = []
-if len(B) > A:
-    None
-else:
-    big = B[0]
-    for i in B:
-        if i > big:
-            big = i
-    for j in range(A):
-            save.append(((B[j] / big) * 100))
-    print(sum(save)/A)
+count = 0
+for i in range(A):
+    B = list(map(str, sys.stdin.readline()))
+    for j in B:
+        if j == 'O':
+            count +=1
+            save.append(count)
+        else:
+            count = 0
+            save.append(count)
+    print(sum(save))
+    save.clear()
+
