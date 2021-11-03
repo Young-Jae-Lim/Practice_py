@@ -14,5 +14,5 @@ B = list(map(str, sys.stdin.readline()))
 if A != (len(B)-1):
     None
 else:
-    B = [int (i) for i in B[:A]]
+    B = [int(i) for i in B[:A]]
     print(sum(B))
