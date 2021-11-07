@@ -30,14 +30,45 @@
 # for z in range(26):
 #     print(count[z],end=' ')
 
-import sys
-A = int(input())
-save = []
-for i in range(A):
-    B = list(map(str, sys.stdin.readline()))
-    for j in B[2:(len(B)-1)]:
-        for z in range(int(B[0])):
-            save.append(j)
-    print(''.join(save))
-    save.clear()
+# import sys
+# A = int(input())
+# save = []
+# for i in range(A):
+#     B = list(map(str, sys.stdin.readline()))
+#     for j in B[2:(len(B)-1)]:
+#         for z in range(int(B[0])):
+#             save.append(j)
+#     print(''.join(save))
+#     save.clear()
 #join함수를 사용하면 리스트에 있는 string타입의 각각의 요소를 합쳐서 하나의 문자열로 만듬
+
+
+# import sys
+# B = list(map(str, sys.stdin.readline()))
+# B .remove('\n')
+# B = [i.replace(i,i.upper()) for i in B]
+# count = []
+# for i in range(26):
+#     count.append(0)
+# for j in B:
+#     check = ord(j) - 65
+#     count[check] +=1
+# if count.count(max(count)) > 1:
+#     print('?')
+# else:
+#     max = count.index(max(count))
+#     print(chr(max+65))
+
+# import sys
+# B = list(map(str, sys.stdin.readline().split()))
+# print(len(B))
+
+import sys
+B = list(map(int, sys.stdin.readline().split()))
+save = []
+for i in B:
+    hun = i // 100
+    ten = (i % 100) // 10
+    one = i % 10
+    save.append((one * 100) + (ten * 10) + (hun))
+print(max(save))
