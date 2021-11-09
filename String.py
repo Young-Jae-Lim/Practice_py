@@ -63,12 +63,48 @@
 # B = list(map(str, sys.stdin.readline().split()))
 # print(len(B))
 
+# import sys
+# B = list(map(int, sys.stdin.readline().split()))
+# save = []
+# for i in B:
+#     hun = i // 100
+#     ten = (i % 100) // 10
+#     one = i % 10
+#     save.append((one * 100) + (ten * 10) + (hun))
+# print(max(save))
+
+# import sys
+# num = ['ABC','DEF','GHI','JKL','MNO','PQRS','TUV','WXYZ']
+# sec = 0
+# B = list(map(str, sys.stdin.readline()))
+# B.remove('\n')
+# B = [i.replace(i,i.upper()) for i in B]
+
+# for i in B:
+#     for j in num:
+#         if i in j:
+#             sec += num.index(j)+3
+
+# print(sec)
+
+# import sys
+# cro_alpha = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
+# count = 0
+# A = sys.stdin.readline()
+# for i in cro_alpha:
+#     if i in A:
+#         A = A.replace(i,"*")
+# print(len(A)-1)
+
 import sys
-B = list(map(int, sys.stdin.readline().split()))
-save = []
-for i in B:
-    hun = i // 100
-    ten = (i % 100) // 10
-    one = i % 10
-    save.append((one * 100) + (ten * 10) + (hun))
-print(max(save))
+A = int(input())
+count = A
+for i in range(A):
+    B = list(map(str, sys.stdin.readline()))
+    for j in range(len(B)-1):
+         if B[j] == B[j+1]:
+             pass
+         elif B[j] in B[j+1:]:
+             count -=1
+             break
+print(count)
