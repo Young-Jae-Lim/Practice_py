@@ -33,4 +33,5 @@ else:
     up = line - A + 1
     down = A  
 print("{0}/{1}".format(up,down))
+#이해가 잘 안댐, 나중에 한번더 볼 필요가 있다.
      
