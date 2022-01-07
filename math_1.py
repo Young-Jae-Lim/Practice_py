@@ -83,6 +83,60 @@
 # else:
 #     print(-1)
 
+# import sys
+# B,C = map(int, sys.stdin.readline().split())
+# print(B+C)
+
+# -------------------------------1011 my try : time out
+# import sys
+
+# def init_fly(A):
+#     count = 0
+#     start = A[0]
+#     end = A[1]
+#     frist_next = [count-1, count, count+1]
+#     if -1 in frist_next:
+#         count += 1
+#         for i in range(len(frist_next)):
+#             frist_next[i] = frist_next[i] + start
+
+#     while True:
+#         if end-1 in frist_next:
+#             count +=1
+#             return count
+#         else:
+#             count+=1
+#             for i in range(len(frist_next)):
+#                 frist_next[i] = frist_next[i] + count
+            
+# if __name__ == "__main__":
+#     A = int(input())
+#     for i in range(A):
+#         B = list(map(int, sys.stdin.readline().split()))
+#         print(init_fly(B))
+
 import sys
-B,C = map(int, sys.stdin.readline().split())
-print(B+C)
+import math
+
+A = int(input())
+
+for i in range(A):
+    count = 0
+    b,c = map(int, sys.stdin.readline().split())
+    dis = c - b
+
+    num = int(math.sqrt(dis))
+    num_2 = num**2
+    
+    if dis == num_2:
+        count = (num *2)-1
+    elif num_2 < dis <= num_2 + num:
+        count = num*2
+    elif num_2 + num < dis:
+        count = (num *2)+1
+    elif dis < 4:
+        count = dis
+        
+    print(count)
+    
+    #https://data-jj.tistory.com/36 참고
