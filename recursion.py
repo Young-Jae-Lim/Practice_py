@@ -8,11 +8,34 @@
 #     A = int(input())
 #     print(feat(A))
 
-def feeboo(n):
-    if n <= 1:
-        return n
-    return feeboo(n-1) + feeboo(n-2)
+# def feeboo(n):
+#     if n <= 1:
+#         return n
+#     return feeboo(n-1) + feeboo(n-2)
 
+# if __name__ == "__main__":
+#     A = int(input())
+#     print(feeboo(A))
+
+
+def star(n, list):
+    all_star = []
+    if n == 3:
+        return list
+    else:
+        for i in list:
+            all_star.append(i * 3)
+        for i in list:
+            all_star.append(i + " " *len(list) + i)
+        for i in list:
+            all_star.append(i*3)
+        return star(n//3,all_star)
+    
 if __name__ == "__main__":
     A = int(input())
-    print(feeboo(A))
+    first_start = ["***", "* *", "***"]
+    all = star(A,first_start)
+    for i in all:
+        print(i)
+        
+#참고 : https://imgzon.tistory.com/37
