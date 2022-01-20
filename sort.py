@@ -90,12 +90,24 @@
 #     i = str(i).strip()
 #     print(i)
 
+# import sys
+# A = int(sys.stdin.readline())
+# save = []
+# for i in range(A):
+#     B = list(map(str, sys.stdin.readline().split()))
+#     save.append(B)
+# save.sort(key = lambda x:int(x[0]))
+# for i in save:
+#     print(i[0],i[1])
+
 import sys
 A = int(sys.stdin.readline())
-save = []
-for i in range(A):
-    B = list(map(str, sys.stdin.readline().split()))
-    save.append(B)
-save.sort(key = lambda x:int(x[0]))
-for i in save:
-    print(i[0],i[1])
+B = list(map(int, sys.stdin.readline().split()))
+if len(B) > A:
+    None
+else:
+    C = sorted(list(set(B)))
+    dic = {C[i]:i for i in range(len(C))}
+    for i in B:
+        print(dic[i], end=' ')
+#sorted로 객체 깊은 복사, 딕셔너리 이용하여 키값 및 값 지정하여 출력
